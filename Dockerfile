@@ -1,5 +1,5 @@
 # 1. Imagen base con PHP y extensiones requeridas
-FROM php:8.1-fpm AS base
+FROM php:8.2-fpm AS base
 
 WORKDIR /var/www/html
 
