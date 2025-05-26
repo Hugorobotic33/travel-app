@@ -63,7 +63,7 @@ EXPOSE 80
 
 # Arrancar ambos procesos (Nginx + PHP-FPM) con Supervisor
 # CMD ["/usr/bin/supervisord", "-n"]
-CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && && \
+CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
