@@ -26,7 +26,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
  && composer install --no-dev --optimize-autoloader --no-scripts
 
 # 3. Node.js stage for frontend build
-FROM node:16 AS frontend
+FROM node:18 AS frontend
 
 WORKDIR /var/www/html
 # Install Node dependencies
