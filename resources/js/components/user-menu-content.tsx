@@ -3,7 +3,7 @@ import { UserInfo } from '@/components/user-info';
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
 import { type User } from '@/types';
 import { Link, router } from '@inertiajs/react';
-import { LogOut, Settings } from 'lucide-react';
+import { LogOut, Settings, NotepadText } from 'lucide-react';
 
 interface UserMenuContentProps {
     user: User;
@@ -34,6 +34,12 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
                 </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            <DropdownMenuItem asChild className='mb-2'>
+                <Link className="block w-full" href={route('reservations')} as="button"> 
+                    <NotepadText className="mr-2" />
+                    Reservations
+                </Link>
+            </DropdownMenuItem>
             <DropdownMenuItem asChild>
                 <Link className="block w-full" method="post" href={route('logout')} as="button" onClick={handleLogout}>
                     <LogOut className="mr-2" />

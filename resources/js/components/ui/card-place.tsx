@@ -4,27 +4,22 @@ import { Box, Card, CardContent, CardMedia, IconButton, Typography, Rating } fro
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder"
 import BuyButton from "./button-buy"
+import dayjs from "dayjs"
+import { Experience } from "@/types"
+import { router } from "@inertiajs/react"
 
-interface Activity {
-    id: string
-    title: string
-    desc: string
-    availableDate: Date    
-    expireDate: Date
-    price: number
-    rating: number
-    image: string
-    createdAt: Date
-    updatedAt: Date
-}
-export default function ExperienceCard({activity}: {activity: Activity}) {
-  const { id, title, desc, availableDate, expireDate, price, rating, image, createdAt, updatedAt } = activity
+export default function ExperienceCard({experience, onBuy}: {experience: Experience, onBuy?: (experience: Experience) => void}) {
+  const { id, title, desc, available_date, expiration_date, price, rating, image, createdAt, updatedAt } = experience
   const [isFavorite, setIsFavorite] = useState(false)
 
   const handleFavoriteClick = (event: React.MouseEvent) => {
     event.stopPropagation()
     setIsFavorite(!isFavorite)
   }
+
+  const goToExperienceDetail = (id: number) => {    
+    router.visit("/experiences/" + id);
+  };
 
   return (
     <Card
@@ -39,18 +34,23 @@ export default function ExperienceCard({activity}: {activity: Activity}) {
         },
         cursor: "pointer",
       }}
+      onClick={(e) => {
+        e.stopPropagation()
+        goToExperienceDetail(id)
+      }}
     >
-      <Box sx={{ position: "relative" }}>
+      {/* <Box sx={{ position: "relative" }}> */}
         <CardMedia
           component="img"
-          height="240"
+          // height="240"          
           image={image}
           alt={title}
           sx={{
+            height: 240,
             objectFit: "cover",
           }}
         />      
-      </Box>
+      {/* </Box> */}
 
       <CardContent sx={{ padding: "16px" }}>
         <Typography
@@ -90,16 +90,13 @@ export default function ExperienceCard({activity}: {activity: Activity}) {
                 alignItems: "baseline",
                 gap: "4px",
             }}
-        >
+            >
             <span style={{ fontWeight: 600 }}>{`$${Number(price).toFixed(2)}`}</span>
             <span style={{ fontWeight: 400, fontSize: "13px", marginLeft: 4 }}>por persona</span>
         </Typography>
-        <BuyButton fullWidth text="Comprar" showIcon={false} />
-
-        {/* <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-          <Rating
+            <Rating
             value={rating}
-            precision={0.1}
+            precision={0.5}
             size="small"
             readOnly
             sx={{
@@ -111,17 +108,11 @@ export default function ExperienceCard({activity}: {activity: Activity}) {
               },
             }}
           />
-          <Typography
-            variant="body2"
-            sx={{
-              fontSize: "12px",
-              color: "#717171",
-              marginLeft: "4px",
-            }}
-          >
-            {rating} ({Math.floor(Math.random() * 1000)} reviews)
-          </Typography>
-        </Box> */}       
+          <br></br>
+        {/* inicio: {dayjs(available_date).format("DD/MM/YYYY")}   <br></br> fin: {dayjs(expiration_date).format("DD/MM/YYYY")} */}
+               <Typography variant="body2">Disponible: {dayjs(available_date).format("DD-MM-YYYY")}</Typography>
+                      <Typography variant="body2">Expira: {dayjs(expiration_date).format("DD-MM-YYYY")}</Typography>
+        <BuyButton fullWidth text="Comprar" showIcon={false} onClick={() => onBuy && onBuy(experience)} />             
       </CardContent>
     </Card>
   )

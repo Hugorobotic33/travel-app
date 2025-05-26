@@ -11,6 +11,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
+import Navbar from '@/components/navbar';
+import NavWrapper from '@/layouts/nav-wrapper';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -41,9 +43,9 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
     };
 
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        // <AppLayout breadcrumbs={breadcrumbs}>
+            <NavWrapper>
             <Head title="Profile settings" />
-
             <SettingsLayout>
                 <div className="space-y-6">
                     <HeadingSmall title="Profile information" description="Update your name and email address" />
@@ -91,7 +93,7 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                                         method="post"
                                         as="button"
                                         className="text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500"
-                                    >
+                                        >
                                         Click here to resend the verification email.
                                     </Link>
                                 </p>
@@ -113,15 +115,20 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                                 enterFrom="opacity-0"
                                 leave="transition ease-in-out"
                                 leaveTo="opacity-0"
-                            >
+                                >
                                 <p className="text-sm text-neutral-600">Saved</p>
                             </Transition>
                         </div>
                     </form>
                 </div>
-
                 <DeleteUser />
             </SettingsLayout>
-        </AppLayout>
+            </NavWrapper>
+        
+        
+        // </AppLayout>
     );
 }
+
+
+

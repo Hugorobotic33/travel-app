@@ -41,3 +41,17 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface Experience {
+    id: number;
+    title: string;
+    desc: string;
+    available_date: Date;
+    expiration_date: Date;
+    price: number;
+    rating: number;
+    place: string;
+    image: string;
+    createdAt: Date;
+    updatedAt: Date;
+}

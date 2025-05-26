@@ -46,7 +46,10 @@ export default function BuyButton({
       color={color}
       size={size}
       fullWidth={fullWidth}
-      onClick={onClick}
+      onClick={(e) => {
+        e.stopPropagation() // Evita que el evento de clic se propague
+        onClick && onClick()
+      }}
       disabled={disabled}
       startIcon={showIcon ? <ShoppingCartIcon /> : undefined}
     >

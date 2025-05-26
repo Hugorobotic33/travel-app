@@ -36,8 +36,7 @@ export default function TextFieldNumber({value, onChange}: {value: string, onCha
         label="Personas"
         type="number"
         value={value}
-        onChange={onChange}
-        // fullWidth
+        onChange={onChange}        
         InputProps={{
             startAdornment: (
             <InputAdornment position="start">
