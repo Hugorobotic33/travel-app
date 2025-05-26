@@ -54,4 +54,6 @@ RUN chown -R www-data:www-data storage bootstrap/cache \
 EXPOSE 80
 
 # Arrancar ambos procesos (Nginx + PHP-FPM) con Supervisor
-CMD ["/usr/bin/supervisord", "-n"]
+# CMD ["/usr/bin/supervisord", "-n"]
+CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && /usr/bin/supervisord -n"]
+
