@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.7,
                 'status' => true,
                 'place' => 'Oaxaca, Oaxaca',
-                'image' => 'https://images.unsplash.com/photo-1574975201078-bb21d6c7a66d',
+                'image' => 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/05/Centro-Oaxaca.jpg',
             ],
             [
                 'title' => 'Salto en paracaídas en Chiapas',
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.9,
                 'status' => true,
                 'place' => 'Tuxtla Gutiérrez, Chiapas',
-                'image' => 'https://images.unsplash.com/photo-1504198453319-5ce911bafcde',
+                'image' => 'https://cdn1.yumping.com.mx/emp/fotos/301/E/019713543/640/Paracaidismo%20en%20Chiapas.jpg',
             ],
             [
                 'title' => 'Tour en globo sobre Teotihuacán',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.8,
                 'status' => true,
                 'place' => 'San Juan Teotihuacán, Estado de México',
-                'image' => 'https://images.unsplash.com/photo-1529059997568-3f4be1e3edfb',
+                'image' => 'https://cdn-igkpn.nitrocdn.com/bcAeMJnqCXjXxNocHDQgfCXUQiqrKTqL/assets/images/optimized/rev-5e35e0c/vuelosenglobo.mx/wp-content/uploads/2020/10/viajar-en-globo-por-teotihuacan-1024x1024.jpg',
             ],
             [
                 'title' => 'Caminata en el Cañón del Sumidero',
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.5,
                 'status' => true,
                 'place' => 'Chiapas',
-                'image' => 'https://images.unsplash.com/photo-1607042292768-f0a0245fa350',
+                'image' => 'https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/86bc8b7a_31052020_2017.jpg',
             ],
             [
                 'title' => 'Nado con tortugas en Akumal',
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.6,
                 'status' => true,
                 'place' => 'Akumal, Quintana Roo',
-                'image' => 'https://images.unsplash.com/photo-1588947086463-83f0033a97a5',
+                'image' => 'https://tourslarivieramaya.com/wp-content/uploads/2022/11/Bucear-tortugas-akumal.jpg',
             ],
             [
                 'title' => 'Ruta del Vino en Valle de Guadalupe',
@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.4,
                 'status' => true,
                 'place' => 'Ensenada, Baja California',
-                'image' => 'https://images.unsplash.com/photo-1615309527165-b061f1790cf9',
+                'image' => 'https://bajaviajes.com/wp-content/uploads/2015/11/la-cetto-tour-premium-valle-guadalupe-vinedos-800x600.jpg',
             ],
             [
                 'title' => 'Escalada en la Peña de Bernal',
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.2,
                 'status' => true,
                 'place' => 'Bernal, Querétaro',
-                'image' => 'https://images.unsplash.com/photo-1588011757594-b3f0eb46fa5a',
+                'image' => 'https://promoturqueretaro.com.mx/wp-content/uploads/2018/07/Salidas-a-Bernal-Pueblo-M%C3%A1gico.jpg',
             ],
             [
                 'title' => 'Tour gastronómico por Puebla',
@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.7,
                 'status' => true,
                 'place' => 'Puebla, Puebla',
-                'image' => 'https://images.unsplash.com/photo-1612182061245-2a2d72edc27e',
+                'image' => 'https://dynamic-media.tacdn.com/media/photo-o/2f/27/0c/d6/caption.jpg?w=800&h=600&s=1',
             ],
             [
                 'title' => 'Pesca deportiva en Mazatlán',
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.3,
                 'status' => true,
                 'place' => 'Mazatlán, Sinaloa',
-                'image' => 'https://images.unsplash.com/photo-1583597928350-f3bc3382640a',
+                'image' => 'https://elcidmarinas.com.mx/wp-content/uploads/2017/05/CIDmarina-009-X2-1024x682.jpg',
             ],
             [
                 'title' => 'Ruta del café en Veracruz',
@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.5,
                 'status' => true,
                 'place' => 'Coatepec, Veracruz',
-                'image' => 'https://images.unsplash.com/photo-1587733340190-0894df79c3cf',
+                'image' => 'https://www.eluniversal.com.mx/resizer/v2/2MQSJYWO4FDYDEM46PO4LTTBZY.jpg?auth=a6f4900adf9a46f4c5c375d7b5cb9096e734f7b15663915ca1ef7ddbf41acc76&smart=true&width=1100&height=666',
             ],
             [
                 'title' => 'Visita a las Grutas de Tolantongo',
@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.6,
                 'status' => true,
                 'place' => 'Hidalgo',
-                'image' => 'https://images.unsplash.com/photo-1581897774154-f2c35e9b51f7',
+                'image' => 'https://www.mexicodestinos.com/blog/wp-content/uploads/2017/08/tunel-de-vapor-tolantongo.jpg',
             ],
             [
                 'title' => 'Paseo en trajinera por Xochimilco',
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.1,
                 'status' => true,
                 'place' => 'CDMX',
-                'image' => 'https://images.unsplash.com/photo-1621923839403-728ee1b598ef',
+                'image' => 'https://media.viajando.travel/p/589e81110ea3b64a7dca3e703458d735/adjuntos/236/imagenes/000/679/0000679323/1200x0/smart/disfruta-las-trajineras-tu-visita-xochimilco.jpg',
             ],
             [
                 'title' => 'Tour arqueológico en Palenque',
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.8,
                 'status' => true,
                 'place' => 'Palenque, Chiapas',
-                'image' => 'https://images.unsplash.com/photo-1572635196184-dc12b7aeed4d',
+                'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/e7/4b/fe.jpg',
             ],
             [
                 'title' => 'Paddle board en Bacalar',
@@ -173,7 +173,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.5,
                 'status' => true,
                 'place' => 'Bacalar, Quintana Roo',
-                'image' => 'https://images.unsplash.com/photo-1592699405463-1959db1fe429',
+                'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0f/a6/45/a3.jpg',
             ],
             [
                 'title' => 'Sandboarding en las dunas de Samalayuca',
@@ -184,7 +184,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.2,
                 'status' => true,
                 'place' => 'Chihuahua',
-                'image' => 'https://images.unsplash.com/photo-1633258022499-bb5f01932c30',
+                'image' => 'https://upload.wikimedia.org/wikipedia/commons/7/70/Dunas_samalayuca.jpg',
             ],
             [
                 'title' => 'Ruta del Queso y Vino en Querétaro',
@@ -195,7 +195,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.6,
                 'status' => true,
                 'place' => 'Querétaro',
-                'image' => 'https://images.unsplash.com/photo-1574878639893-7e58782bc88d',
+                'image' => 'https://www.abasturhub.com/img/blog/Queretaro-apuesta-por-una-ruta-de-queso-vino.jpg',
             ],
             [
                 'title' => 'Senderismo en la Huasteca Potosina',
@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.9,
                 'status' => true,
                 'place' => 'San Luis Potosí',
-                'image' => 'https://images.unsplash.com/photo-1582313628393-2b7a3a226f69',
+                'image' => 'https://icdn.descubro.mx/uploads/2024/02/huasteca-potosina-cascadas-imperdibles-destino-turistico.jpg?strip=all&lossy=1&ssl=1',
             ],
             [
                 'title' => 'Nado con tiburón ballena',
@@ -217,7 +217,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 5.0,
                 'status' => true,
                 'place' => 'Isla Holbox, Quintana Roo',
-                'image' => 'https://images.unsplash.com/photo-1587547139480-b21581b9be80',
+                'image' => 'https://mayanmonkey.com/blog/es/wp-content/uploads/sites/2/2022/06/shutterstock_70095013-compressed-scaled.jpg',
             ],
             [
                 'title' => 'Campamento astronómico en Real de Catorce',
@@ -228,7 +228,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.3,
                 'status' => true,
                 'place' => 'San Luis Potosí',
-                'image' => 'https://images.unsplash.com/photo-1534707630408-75bcec9b38b7',
+                'image' => 'https://www.dondeir.com/wp-content/uploads/2018/09/campamentos-astronomicos-2018-lunada.jpg',
             ],
             [
                 'title' => 'Ruta de murales en CDMX',
@@ -239,7 +239,7 @@ class DatabaseSeeder extends Seeder
                 'rating' => 4.0,
                 'status' => true,
                 'place' => 'CDMX',
-                'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+                'image' => 'https://media.timeout.com/images/103714333/750/562/image.jpg',
             ],
         ];
         foreach ($experiences as $experience) {

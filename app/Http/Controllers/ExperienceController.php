@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Experience;
+use App\Models\ActivityExperience;
 use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
@@ -16,7 +17,7 @@ class ExperienceController extends Controller
             $query->whereDate('available_date', '<=', $date)
                   ->whereDate('expiration_date', '>=', $date);
         }
-
+        $query->orderByDesc('rating');
         $perPage = 15;
         $page = $request->input('page', 1);
         $experiences = $query->paginate($perPage, ['*'], 'page', $page);
@@ -43,7 +44,11 @@ class ExperienceController extends Controller
     public function show($id)
     {
         $experience = Experience::findOrFail($id);
-        return response()->json($experience);
+        $activities = ActivityExperience::where('experience_id', $id)->get();         
+        return response()->json([
+            'experience' => $experience,
+            'activities' => $activities,
+        ]);
     }
 
     public function update(Request $request, $id)
