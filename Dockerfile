@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y \
        git zip unzip libzip-dev libpng-dev libonig-dev curl libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl \
+    && docker-php-ext-install pdo pdo_pgsql mbstring zip exif pcntl \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Dependencias de PHP usando imagen oficial de Composer
