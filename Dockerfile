@@ -14,7 +14,7 @@ FROM composer:2.5 AS dependencies
 
 WORKDIR /var/www/html
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-scripts
+RUN composer install --optimize-autoloader --no-scripts
 
 # 3. Etapa de frontend con Node 18 (soporte Web Crypto)
 FROM node:18 AS frontend
