@@ -47,15 +47,13 @@ COPY --from=frontend     /var/www/html/resources/css ./resources/css
 COPY . .
 
 # Copiar .env.example para el build
-RUN cp .env.example .env \
-    && php artisan key:generate --force --show
-
+RUN cp .env.example .env 
+# && php artisan key:generate --force --show
 # Optimizar Laravel
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache \
-    && composer dump-autoload --optimize
-    
+# RUN php artisan config:cache \
+#     && php artisan route:cache \
+#     && php artisan view:cache \
+#     && composer dump-autoload --optimize
 # Ajustar permisos
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 755 storage bootstrap/cache
@@ -65,5 +63,9 @@ EXPOSE 80
 
 # Arrancar ambos procesos (Nginx + PHP-FPM) con Supervisor
 # CMD ["/usr/bin/supervisord", "-n"]
-CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && /usr/bin/supervisord -n"]
+CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && && \
+    php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache && \
+    composer dump-autoload --optimize && \ /usr/bin/supervisord -n"]
 
