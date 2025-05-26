@@ -46,6 +46,10 @@ COPY --from=frontend     /var/www/html/resources/js ./resources/js
 COPY --from=frontend     /var/www/html/resources/css ./resources/css
 COPY . .
 
+# Copiar .env.example para el build
+RUN cp .env.example .env \
+    && php artisan key:generate --force --show
+
 # Optimizar Laravel
 RUN php artisan config:cache \
     && php artisan route:cache \
