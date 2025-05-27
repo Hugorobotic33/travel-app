@@ -4,6 +4,8 @@ import { Container, Typography, Card, CardContent, Grid, Stack, Divider } from '
 import Navbar from '@/components/navbar';
 import BtnBack from '@/components/ui/btn-back';
 import NavWrapper from '@/layouts/nav-wrapper';
+import { router } from '@inertiajs/react';
+import { useFilter } from '@/context/filter-context';
 
 export default function MyReservations() {
   const [reservations, setReservations] = useState<any[]>([]);
@@ -12,7 +14,7 @@ export default function MyReservations() {
   useEffect(() => {
     const fetchReservations = async () => {
       try{        
-        const res = await axios.get('/api/my-reservations');
+        const res = await axios.get('/api/reservations');
         setReservations(res.data);
       }catch(error){
         console.log("error is: ", error);        
@@ -26,7 +28,8 @@ export default function MyReservations() {
   return (
       <NavWrapper>
       <Container maxWidth="md">
-        <Typography variant="h4" fontWeight={700} sx={{ mt: 4, mb: 2 }}>Mis Reservaciones</Typography>
+        <BtnBack onClick={()=>null} />
+        <Typography variant="h4" fontWeight={700} sx={{ mt: 2, mb: 2 }}>Mis Reservaciones</Typography>
         {loading ? (
           <Typography>Cargando...</Typography>
         ) : reservations.length === 0 ? (

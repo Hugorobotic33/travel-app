@@ -68,6 +68,22 @@ Este proyecto es una aplicación de experiencias de viaje construida con Laravel
 - Listado de reservaciones del usuario
 - Panel de administración básico (opcional)
 
+## Pruebas unitarias
+
+Los tests de los modelos principales se encuentran en:
+
+```
+tests/Unit/ModelsTest.php
+```
+
+Para ejecutarlos, usa el siguiente comando en la raíz del proyecto:
+
+```sh
+php artisan test --testsuite=Unit
+```
+
+Esto ejecutará los tests unitarios de los modelos Experience, ActivityExperience y Reservation.
+
 ## Notas
 - Puedes modificar los seeders para agregar más experiencias o actividades.
 - El frontend usa React + Inertia.js + Material UI.

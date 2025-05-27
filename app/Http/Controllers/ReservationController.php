@@ -13,13 +13,22 @@ class ReservationController extends Controller
     {        
         $validated = $request->validate([
             'experience_id' => 'required|exists:experiences,id',
-            'user_id' => 'required|exists:users,id',
+            // 'user_id' => 'required|exists:users,id',
             'experience_date' => 'required|date',
             'people_amount' => 'required|integer|min:1',
             'reservation_price' => 'required|numeric',
         ]);
         $reservation = Reservation::create($validated);
         return response()->json($reservation, 201);
+    }
+    
+    public function index()
+    {
+        $reservations = Reservation::with('experience')
+            ->orderByDesc('created_at')
+            ->get();
+        
+        return response()->json($reservations);
     }
 
     public function myReservations()

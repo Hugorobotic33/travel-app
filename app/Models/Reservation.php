@@ -15,7 +15,7 @@ class Reservation extends Model
         'reservation_price',
         'experience_date',
         'status',
-        'user_id',
+        // 'user_id',
     ];
 
     public function experience()

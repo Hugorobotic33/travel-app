@@ -22,6 +22,7 @@ export default function Welcome() {
     const [experiences, setExperiences] = useState<any[]>([]);
     const { peopleAmount, date, setParams} = useFilter()
     const [page, setPage] = useState(1);
+    const [dateFilter, setDateFilter] = useState<string | null>(null);
     const [pagination, setPagination] = useState({
         current_page: 1,
         last_page: 1,
@@ -78,20 +79,20 @@ export default function Welcome() {
             showErrorAlert('Por favor, selecciona una fecha para la reserva.');
             return
         }
-        if (!auth.user) {            
-            localStorage.setItem('pendingReservation', JSON.stringify({
-                experienceId: selectedExperience.id,
-                date: date,
-                peopleAmount: peopleAmount,
-                reservation_price: selectedExperience.price * peopleAmount,
-            }));
-            router.visit('/login');
-            return;
-        }
+        // if (!auth.user) {            
+        //     localStorage.setItem('pendingReservation', JSON.stringify({
+        //         experienceId: selectedExperience.id,
+        //         date: date,
+        //         peopleAmount: peopleAmount,
+        //         reservation_price: selectedExperience.price * peopleAmount,
+        //     }));
+        //     router.visit('/login');
+        //     return;
+        // }
         // Crear reserva
         createReservation({
             experience_id: selectedExperience.id, 
-            user_id: auth.user.id,
+            // user_id: auth.user.id,
             experience_date: date,
             people_amount: peopleAmount,
             reservation_price: selectedExperience.price * peopleAmount,
@@ -102,25 +103,25 @@ export default function Welcome() {
     };
 
     // Al loguearse, si hay reserva pendiente, crearla
-    useEffect(() => {
-        if (auth.user) {
-            const pending = localStorage.getItem('pendingReservation');
-            if (pending) {
-                const data = JSON.parse(pending);
-                createReservation({
-                    experience_id: data.experienceId,
-                    user_id: auth.user.id,
-                    experience_date: data.date,
-                    people_amount: data.peopleAmount,
-                    reservation_price: data.reservation_price,
-                }, ()=>{
-                    showAlert("Reservacion creada con éxito");   
-                    localStorage.removeItem('pendingReservation');
-                })
+    // useEffect(() => {
+    //     if (auth.user) {
+    //         const pending = localStorage.getItem('pendingReservation');
+    //         if (pending) {
+    //             const data = JSON.parse(pending);
+    //             createReservation({
+    //                 experience_id: data.experienceId,
+    //                 user_id: auth.user.id,
+    //                 experience_date: data.date,
+    //                 people_amount: data.peopleAmount,
+    //                 reservation_price: data.reservation_price,
+    //             }, ()=>{
+    //                 showAlert("Reservacion creada con éxito");   
+    //                 localStorage.removeItem('pendingReservation');
+    //             })
               
-            }
-        }
-    }, [auth.user]);
+    //         }
+    //     }
+    // }, [auth.user]);
     
     useEffect(() => {
         fetchExperiences();
@@ -140,8 +141,8 @@ export default function Welcome() {
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
-            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
                 <Navbar />                
+            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
                 <Title text='Encuentra tu experiencia perfecta'/>
                 <Subtitle />       
                 <br></br> 

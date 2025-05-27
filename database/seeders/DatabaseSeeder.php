@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Experience;
 use Illuminate\Database\Seeder;
+use Database\Seeders\ActivityExperienceSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,10 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
         $experiences = [
             [
@@ -57,7 +58,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Caminata en el Cañón del Sumidero',
                 'desc' => 'Navega o camina por este impresionante cañón natural.',
-                'available_date' => '2025-06-01',
+                'available_date' => '2025-05-01',
                 'expiration_date' => '2025-11-30',
                 'price' => 800,
                 'rating' => 4.5,
@@ -90,7 +91,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Escalada en la Peña de Bernal',
                 'desc' => 'Escala uno de los monolitos más grandes del mundo.',
-                'available_date' => '2025-06-01',
+                'available_date' => '2025-05-01',
                 'expiration_date' => '2025-12-31',
                 'price' => 700,
                 'rating' => 4.2,
@@ -112,7 +113,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Pesca deportiva en Mazatlán',
                 'desc' => 'Disfruta un día en altamar buscando marlin y dorado.',
-                'available_date' => '2025-07-01',
+                'available_date' => '2025-05-01',
                 'expiration_date' => '2025-12-31',
                 'price' => 3000,
                 'rating' => 4.3,
@@ -245,5 +246,7 @@ class DatabaseSeeder extends Seeder
         foreach ($experiences as $experience) {
             Experience::create($experience);
         }
+
+        $this->call(ActivityExperienceSeeder::class);
     }
 }
